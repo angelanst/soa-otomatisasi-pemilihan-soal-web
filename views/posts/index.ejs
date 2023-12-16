@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body style="background: #dbecf4">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo-its.png" width="30" height="30" class="d-inline-block align-top" alt=""> 
+            Pengembangan dan Penerapan Sistem - A
+        </a>
+    </nav>
+    <div class="text-center">
+        <img src="/images/imghome1.jpg" class="img-fluid" width="1280px" alt="Responsive image">
+    </div>
+    <div class="container mb-5 mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <% if (messages.success) { %>
+                    <div class="alert alert-success" role="alert"><%- messages.success %></div>
+                <% } %>
+                
+                <% if (messages.error) { %>
+                    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                <% } %>
+
+                <h3 class="mt-4 mb-4">Selamat Datang!</h3>
+                <div class="row">
+                    <div class="card shadow rounded col-5 mr-5">
+                        <div class="card-body">
+                          <h4 class="card-title">Bank Soal Ujian</h4>
+                          <p class="card-text">Lihat Daftar Bank Soal Ujian & Generate Soal Ujian Otomatis</p>
+                          <a href="posts/listsoal" class="btn btn-outline-info">Lihat</a>
+                        </div>
+                    </div>
+                    <div class="card shadow rounded col-5">
+                        <div class="card-body">
+                          <h4 class="card-title">Penjadwalan Ujian</h4>
+                          <p class="card-text">Lihat Jadwal Ujian & Buat Jadwal Ujian Baru</p>
+                          <a href="posts/ujian" class="btn btn-outline-info">Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+</body>
+</html>

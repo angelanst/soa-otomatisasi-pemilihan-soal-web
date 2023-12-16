@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generate Soal Ujian Otomatis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body style="background: #dbecf4">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/images/logo-its.png" width="30" height="30" class="d-inline-block align-top" alt=""> 
+        Pengembangan dan Penerapan Sistem - A
+    </a>
+  </nav>
+    <div class="container mt-5 mb-3">
+        <h1 class="mb-3">Generate Soal Ujian Otomatis</h1>
+        <p>Terdapat 2 metode pemilihan soal secara otomatis, silahkan pilih yang anda butuhkan!</p>
+        <div class="row">
+          <div class="card shadow rounded col-5 mr-5">
+              <div class="card-body">
+                <h4 class="card-title">Level Kesulitan</h4>
+                <p class="card-text">Generate soal sebanyak 20 butir secara otomatis berdasarkan level kesulitan.</p>
+                <button data-toggle="collapse" data-target="#level" class="btn btn-outline-info">Lihat Detail</button>
+                <div id="level" class="collapse">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Easy: 7 soal</li>
+                    <li class="list-group-item">Medium: 8 soal</li>
+                    <li class="list-group-item">Hard: 5 Soal</li>
+                  </ul>
+                </div>
+                <a href="kesulitan" class="btn btn-outline-info">Generate Soal</a>
+              </div>
+          </div>
+          <div class="card shadow rounded col-5">
+              <div class="card-body">
+                <h4 class="card-title">Bab Materi</h4>
+                <p class="card-text">Generate soal sebanyak 20 butir secara otomatis berdasarkan bab materi.</p>
+                <button data-toggle="collapse" data-target="#bab" class="btn btn-outline-info">Lihat Detail</button>
+                <div id="bab" class="collapse">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Bab 1 - User & Visual Requirements: 5 Soal</li>
+                    <li class="list-group-item">Bab 2 - DFD & Use Case Diagram: 2 Soal</li>
+                    <li class="list-group-item">Bab 3 - Risk Management in Software Project: 4 Soal</li>
+                    <li class="list-group-item">Bab 4 - Process Modeling and Process Improvement: 5 Soal</li>
+                    <li class="list-group-item">Bab 5 - Service Oriented Architecture (SOA): 4 Soal</li>
+                  </ul>
+                </div>
+                <a href="materi" class="btn btn-outline-info">Generate Soal</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </script>
+</body>
+</html>

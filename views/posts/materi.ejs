@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Otomatisasi Soal - Materi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body style="background: #dbecf4">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+          <img src="/images/logo-its.png" width="30" height="30" class="d-inline-block align-top" alt=""> 
+          Pengembangan dan Penerapan Sistem - A
+      </a>
+    </nav>
+    <div class="container mt-5">
+        <h1>Pemilihan Soal Otomatis Berdasarkan Bab Materi</h1>
+        <button class="btn btn-info mb-3 mr-2 mt-2" id="download" onclick="downloadPDF()">Download Soal</button>
+        <button class="btn btn-outline-info mb-3 mt-2" onclick="reloadPage()">Generate Soal Ulang</button>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card border-0 shadow rounded">
+                    <div class="card-body" id="soal">
+                        <h3 class="mb-3">Soal Ujian</h3>
+                        <h5 class="mb-3">Kerjakan soal dibawah ini dengan memilih salah satu jawaban benar</h3>
+                        <table class="table">
+                            <tbody>
+                                <% if(data.length){
+                                    for(var i = 0; i< data.length; i++) {%>  
+                                        <tr>
+                                            <th scope="row" class="text-center"><%= (i+1) %></th>
+                                            <td><%= data[i].question%> 
+                                                <ol type="a" class="mt-2">
+                                                <li><%= data[i].ans_a%></li>
+                                                <li><%= data[i].ans_b%></li>
+                                                <li><%= data[i].ans_c%></li>
+                                                <li><%= data[i].ans_d%></li>
+                                            </ol></td>
+                                            <td><%= data[i].bab%></td>
+                                        </tr>
+                                    <% }
+                                }else{ %>
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger" role="alert">
+                                                Data Tidak Ditemukan !
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>  
+                        <p class="text-center">Selamat mengerjakan</p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function reloadPage() {
+            window.location.reload();
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            document.getElementById("download")
+            .addEventListener("click", ()=>{
+                const soal = this.document.getElementById("soal");
+                console.log("soal");
+                console.log(window);
+                html2pdf().from(soal).save();
+            })
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
